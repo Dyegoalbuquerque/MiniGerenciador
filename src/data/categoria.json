@@ -1,0 +1,8 @@
+
+[
+    {"id":1,"descricao":"Combustível"},
+    {"id":2,"descricao":"Alimentação"},
+    {"id":3,"descricao":"Despesa mensal"},    
+    {"id":4,"descricao":"Material descartável"},    
+    {"id":5,"descricao":"Produtos"}
+]

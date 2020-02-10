@@ -1,0 +1,98 @@
+<h5>
+  Clientes
+</h5>
+<p>
+  Manter uma lista de clientes é fundamental para seu trabalho do dia dia.
+
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+  <button mat-raised-button color="success" (click)="openClienteDialog()">Criar cliente</button>
+</p>
+
+<br />
+
+<mat-divider></mat-divider>
+
+<br />
+
+<div class="example-container  mat-elevation-z8">
+  <br />
+  <table mat-table [dataSource]="dataSourceCliente">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="rg">
+      <th mat-header-cell *matHeaderCellDef> Rg </th>
+      <td mat-cell *matCellDef="let element"> {{element.rg}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef> Cpf</th>
+      <td mat-cell *matCellDef="let element">
+        {{element.cpf}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let element">
+        <strong> {{element.nome }} </strong>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="logradouro">
+      <th mat-header-cell *matHeaderCellDef> Logradouro </th>
+      <td mat-cell *matCellDef="let element"> {{element.logradouro}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef> Nº </th>
+      <td mat-cell *matCellDef="let element"> {{element.numeroLogradouro}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bairro">
+      <th mat-header-cell *matHeaderCellDef> Bairro </th>
+      <td mat-cell *matCellDef="let element">
+        {{element.bairro}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="complemento">
+      <th mat-header-cell *matHeaderCellDef> Complemento </th>
+      <td mat-cell *matCellDef="let element">
+        {{element.complemento}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef> Tipo </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-chip-list>
+          <mat-chip color="primary" *ngIf="element.tipo == 'N'">Novo</mat-chip>
+          <mat-chip color="primary" *ngIf="element.tipo == 'A'">Ativo</mat-chip>
+          <mat-chip color="warn" *ngIf="element.tipo == 'I'">Inativo</mat-chip>
+        </mat-chip-list>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="remover">
+
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <a class="remover" mat-raised-button color="warn" (click)="dialog.open(element.id)">remover</a>
+        <igx-dialog #dialog title="Confirmação" leftButtonLabel="Cancelar" (onLeftButtonSelect)="dialog.close()"
+          rightButtonLabel="Remover" (onRightButtonSelect)="removerCliente(element.id)"
+          message="Deseja remover este registro ?">
+        </igx-dialog>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunasCliente; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasCliente;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 20, 100]" showFirstLastButtons></mat-paginator>
+</div>

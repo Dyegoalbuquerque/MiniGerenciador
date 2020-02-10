@@ -1,0 +1,36 @@
+TUTORIAL PARA ABRIR O SISTEMA 
+
+COMANDOS
+
+parar o servidor "ctrl + c"
+entrar em uma pasta "cd"
+saber em qual pasta se encontra a janela de prompt "dir ou ls"
+
+1- INSTALAR NODEJS
+
+2- ABRIR A JANELA DE PROMPT CMD
+
+3- NAVEGAR ATE A PASTA DO SISTEMA
+
+   EXECUTAR O SEGUINTE COMANDO "cd caminho... /LarissaSousaEstetica"
+
+4- EXECUTAR O SERVIDOR DE DADOS
+
+   EXECUTAR O SEGUINTE COMANDO "npm start"
+
+   mostrará uma mensagem "servidor esta executando http://localhost:5000"
+
+5- NAVEGAR ATE A PASTA DO SERVIDOR DE PÁGINAS DO NAVEGADOR
+   
+   EXECUTAR O SEGUINTE COMANDO "cd app"
+
+6- EXECUTAR O SERVIDOR DE PÁGINAS DO NAVEGADOR
+
+   EXECUTAR O SEGUINTE COMANDO "ng serve"
+
+   mostrará uma mensagem "Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+				   ℹ ｢wdm｣: Compiled successfully"
+
+7- ABRA O NAVEGADOR E DIGITE "http://localhost:4200"
+
+   pronto !
